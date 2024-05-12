@@ -6,7 +6,7 @@ import { getPosts } from '@/lib/data'
 
 //using this by me for api calls
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/booking", {next:{revalidate:3600}});
+  const res = await fetch(`${process.env.API_URL}/api/booking`, {next:{revalidate:3600}});
 
   if (!res.ok) {
     throw new Error("Something went wrong");

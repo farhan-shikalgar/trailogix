@@ -8,7 +8,7 @@ import { Suspense } from 'react'
 
 // for api using this
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/booking/${slug}` ) ;
+  const res = await fetch(`${process.env.API_URL}/api/booking/${slug}` ) ;
   //to use DElETE write method:"DELETE above in fectch after link"
   if (!res.ok) {
     throw new Error("Something went wrong");
