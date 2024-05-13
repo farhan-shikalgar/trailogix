@@ -54,7 +54,9 @@ const SinglebookingPage =  async({params}) => {
         
       </div>
       <div className={styles.texts}>
-      <div className={styles.subtitle}>Customer Id    - </div><div className={styles.value}>{post.userId}</div>
+      <div className={styles.subtitle}>Booking ID   -      </div><div className={styles.value}>{post.slug}</div>
+
+      <div className={styles.subtitle}>Customer ID    -      </div><div className={styles.value}>{post.userId}</div>
         <div className={styles.subtitle}>Customer Name     - </div><div className={styles.value}>{post.customerName}</div>
         <div className={styles.subtitle}>Phone No          - </div><div className={styles.value}>{post?.phoneNumber}</div>
         <div className={styles.subtitle}> Trailer Type      -</div><div className={styles.value}>{post?.trailerType}</div>
@@ -63,7 +65,7 @@ const SinglebookingPage =  async({params}) => {
         <div className={styles.value}>{post.pickupDateTime} </div>
         <div className={styles.subtitle}>Delivery date     - </div>
         <div className={styles.value}>{post.deliveryDateTime}</div>
-        <div className={styles.subtitle}>Special request   -</div><div className={styles.value}>{post.specialRequest}</div>
+        <div className={styles.subtitle}>Special request  -</div><div className={styles.value}>{post.specialRequest}</div>
       </div>
     </div>
   </div>

@@ -1,3 +1,8 @@
+.cont{
+  
+    justify-content: space-between;
+
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -18,6 +23,18 @@
     padding: 20px;
     cursor: pointer;
     background-color: var(--btn);
+    border: none;
+    border-radius: 5px;
+    color: var(--textColor);
+    font-weight: bold;
+  }
+  .check{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding: 20px;
+    cursor: pointer;
+    background-color: rgb(61, 183, 236);
     border: none;
     border-radius: 5px;
     color: var(--textColor);

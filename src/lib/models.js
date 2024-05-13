@@ -61,7 +61,8 @@ const trailerBookingSchema = new mongoose.Schema({
       type: Date
     },
     specialRequest: {
-      type: String
+      type: String,
+      
     },
     slug: {
         type: String,

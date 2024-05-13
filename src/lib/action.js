@@ -18,8 +18,8 @@ export const addPost = async (formData) => {
         loadType,
         pickupDateTime,
         deliveryDateTime,
-        specialRequestd,
-        slug  } = Object.fromEntries(formData);
+        specialRequest,
+        slug  } = formData;
 
 try {
     connectToDb();
@@ -31,7 +31,7 @@ try {
         loadType,
         pickupDateTime,
         deliveryDateTime,
-        specialRequestd,
+        specialRequest,
         slug 
     });
 
@@ -47,7 +47,7 @@ try {
 };
 
 
-export const DeletePost = async (formData) => {
+export const deletePost = async (formData) => {
 
     console.log(formData)
     const { id } = Object.fromEntries(formData);

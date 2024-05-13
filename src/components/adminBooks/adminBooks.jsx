@@ -2,7 +2,7 @@ import React from 'react'
 import { getPosts } from "@/lib/data";
 import styles from "./adminBooks.module.css";
 import Image from "next/image";
-import { deletePost } from "@/lib/action";
+import { deletePost } from '@/lib/action';
 
 const AdminBooks = async() => {
     const posts = await getPosts();
@@ -22,6 +22,7 @@ const AdminBooks = async() => {
               />
               
               <span className={styles.postTitle}>{post.trailerType}</span>
+              <span className={styles.postTitle}>ID - {post.slug}</span>
             </div>
             <form action={deletePost}>
               <input type="hidden" name="id" value={post.id} />

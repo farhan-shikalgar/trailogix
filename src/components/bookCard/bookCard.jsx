@@ -11,10 +11,12 @@ const BookCard = ({post}) => {
       <div className={styles.top}>
          <div className={styles.imgContainer}>
           <Image src={`/${post.trailerType}.png`} alt="" width={300} height={200}/>
-
-          <h1>{post.customerName}</h1>
-          <h1>{post.loadType}</h1>
-          <h1>{post.trailerType}</h1>
+<div>
+          <h1 className={styles.title}>Name - {post.customerName}</h1>
+          <h1 className={styles.title}>{post.trailerType}-{post.loadType}</h1>
+          <h1 className={styles.title}>Id-{post.slug}</h1>
+          <h1 className={styles.title}>Pickup : {post.pickupDateTime?.toString().slice(0,10)}</h1>
+          </div>
         </div>
         <span className={styles.date}>{post.createdAt?.toString().slice(0, 10)}</span>
       </div>

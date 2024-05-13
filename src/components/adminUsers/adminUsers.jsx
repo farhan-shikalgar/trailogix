@@ -20,6 +20,8 @@ const AdminUsers = async () => {
               height={50}
             />
             <span>{user.name}</span>
+            <span>No.- {user.phone}</span>
+            <span>{user.isAdmin && <p>Admin</p> }</span>
           </div>
           <form action={deleteUser}>
             <input type="hidden" name="id" value={user.id} />
