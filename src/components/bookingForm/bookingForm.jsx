@@ -12,7 +12,7 @@ import Link from "next/link";
 
 // const uniqueSlug = Date.now().toString();
 // const uniqueSlug = `${uuidv4()}-${Date.now()}`; 
-const uniqueSlug = `${uuidv4()}${Date.now()}`.replace(/[^0-9]/g, '').substring(0, 10);
+// const uniqueSlug = `${uuidv4()}${Date.now()}`.replace(/[^0-9]/g, '').substring(0, 10);
 
 
 
@@ -42,7 +42,7 @@ const BookingForm = ({userId}) => {
 const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-      // const uniqueSlug = `${uuidv4()}${Date.now()}`.replace(/[^0-9]/g, '');
+    const uniqueSlug = `${uuidv4()}${Date.now()}`.replace(/[^0-9]/g, '').substring(0, 10);
       const bookingData = { 
           userId,
           customerName: formData.customerName,
@@ -100,7 +100,7 @@ const handleSubmit = async (e) => {
 <input type="datetime-local" name="deliveryDateTime" value={formData.deliveryDateTime} onChange={handleChange} placeholder="Delivery Date and Time"/>
 
 <input type="text" name="specialRequest"  value={formData.specialRequest} onChange={handleChange} placeholder="Special Request" />
-<input type="hidden" name="slug" value={uniqueSlug} />    
+<input type="hidden" name="slug"  />    
       
       <button type="submit">Book!</button>
       {/* {state?.error} */}
