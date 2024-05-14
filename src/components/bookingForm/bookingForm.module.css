@@ -19,7 +19,8 @@
     color: var(--textColor);
   }
   
-  .container button {
+  .container button,
+  .cont button { 
     padding: 20px;
     cursor: pointer;
     background-color: var(--btn);
@@ -27,6 +28,10 @@
     border-radius: 5px;
     color: var(--textColor);
     font-weight: bold;
+    margin-top: 20px;
+  }
+  .secondaryButton {
+    background-color: #FF5733 !important; 
   }
   .check{
     display: flex;
@@ -40,3 +45,23 @@
     color: var(--textColor);
     font-weight: bold;
   }
+
+  .datetimeContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .datetimeLabel {
+    font-weight: bold;
+    margin-bottom: 8px; 
+  }
+  
+  .datetimeContainer input {
+    padding: 20px;
+    background-color: var(--bgSoft);
+    border: none;
+    border-radius: 5px;
+    color: var(--textColor);
+  }
+
+  

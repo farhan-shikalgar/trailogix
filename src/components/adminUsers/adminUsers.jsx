@@ -5,30 +5,45 @@ import { deleteUser } from "@/lib/action";
 
 const AdminUsers = async () => {
   const users = await getUsers();
-  console.log(typeof users)
+  console.log(typeof users);
 
   return (
     <div className={styles.container}>
       <h1>Users</h1>
-      {users.map((user) => (
-        <div className={styles.user} key={user.id}>
-          <div className={styles.detail}>
-            <Image
-              src={user.img || "/noAvatar.png"}
-              alt=""
-              width={50}
-              height={50}
-            />
-            <span>{user.name}</span>
-            <span>No.- {user.phone}</span>
-            <span>{user.isAdmin && <p>Admin</p> }</span>
-          </div>
-          <form action={deleteUser}>
-            <input type="hidden" name="id" value={user.id} />
-            <button className={styles.userButton}>Delete</button>
-          </form>
-        </div>
-      ))}
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            <th>Avatar</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Role</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <tr key={user.id}>
+              <td>
+                <Image
+                  src={user.img || "/noAvatar.png"}
+                  alt=""
+                  width={50}
+                  height={50}
+                />
+              </td>
+              <td>{user.name}</td>
+              <td>{user.phone}</td>
+              <td>{user.isAdmin ? "Admin" : "User"}</td>
+              <td>
+                <form action={deleteUser}>
+                  <input type="hidden" name="id" value={user.id} />
+                  <button className={styles.userButton}>Delete</button>
+                </form>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

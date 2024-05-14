@@ -1,22 +1,55 @@
-.post {
-    margin: 20px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  
-  .detail {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .postButton{
-    padding: 5px 10px;
-    background-color: rgba(220, 20, 60, 0.593);
-    color: var(--textColor);
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-  }
+.container {
+  margin: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.table th {
+  background-color: #0d0c21;
+  color: #fff; 
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.postButton {
+  padding: 5px 10px;
+  background-color: rgba(220, 20, 60, 0.593);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.postButton:hover {
+  background-color: rgba(220, 20, 60, 0.8);
+}
+.postButton1 {
+  padding: 5px 10px;
+  background-color: #3773FD;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.postButton1:hover {
+  background-color:#6c94f1;
+}
+
+.postTitle {
+  font-weight: bold;
+}
