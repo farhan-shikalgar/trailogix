@@ -8,17 +8,21 @@ const Home = () => {
       <div className={styles.textContainer}>
         <h1 className={styles.title}>Trailer Booking Site.</h1>
         <p className={styles.desc}>
-        Welcome to Traillogix, your premier destination for hassle-free trailer bookings! 
-         Traillogix has you covered.Offering various sizes and features to suit your needs.
+          Welcome to Traillogix, your premier destination for hassle-free
+          trailer bookings! Traillogix has you covered.Offering various sizes
+          and features to suit your needs.
         </p>
         <div className={styles.buttons}>
-         <Link href="/about"><button className={styles.button}>Learn More</button></Link>
-          <Link href="/book"><button className={styles.button}>Book Now</button></Link>
+          <Link href="/about">
+            <button className={styles.button}>Learn More</button>
+          </Link>
+          <Link href="/book">
+            <button className={styles.button}>Book Now</button>
+          </Link>
         </div>
-        
       </div>
       <div className={styles.imgContainer}>
-        <Image src="/head.png" alt="" width={750} height={750} className={styles.heroImg}/>
+        <Image src="/head.png" alt="" fill className={styles.heroImg} />
       </div>
     </div>
   );
