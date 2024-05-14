@@ -20,7 +20,7 @@ const AdminPage = async () => {
           </Suspense>
         </div>
         <div className={styles.col}>
-          <AdminPreview/>
+          <AdminPreview bookid = "second-booking"/>
         </div>
       </div>
       <div className={styles.row}>
