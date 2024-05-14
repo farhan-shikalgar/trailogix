@@ -1,13 +1,17 @@
 .container{
-  background-color: #32012F;
+  background-color: #1f0425;
 
-  border: 2px solid #32012F;
+  border: 2px solid #1f0425;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin-bottom: 20px;
+    padding:  16px;
     
+  }
+  .container:hover {
+    box-shadow: 0 8px 16px 0 rgba(238, 235, 235, 0.2);
   }
   
   
@@ -17,9 +21,11 @@
   
   .imgContainer{
   
+  
+
+
     
-    
-    width: 90%;
+    width: 100%;
     height: 400px;
     position: relative;
    
@@ -27,7 +33,7 @@
   .imgContainer title{
     
  
-    width: 90%;
+    width: 100%;
     font-size: 12px;
     margin-bottom: 20px;
   }
@@ -44,14 +50,14 @@
   }
   
   .title{
-    
+    color: #ffffff;
     width: 90%;
     font-size: 24px;
     margin-bottom: 20px;
   }
   
   .desc{
-    width: 90%;
+    width: 100%;
     margin-bottom: 20px;
     font-weight: 300;
     color: gray;
@@ -59,7 +65,48 @@
   
   .link{
     
-    margin-left: 30%;
     
-    text-decoration: underline;
+   
   }
+
+  .container button{
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    outline: 0;
+    margin-left: 0%; 
+    padding: 12px;
+    color: #ffffff;
+    background-color: #1f0425;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .container button:hover {
+    opacity: 0.7;
+  }
+
+  .details {
+    width: 100%;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .label {
+    font-weight: bold;
+    padding-right: 10px;
+  }
+  
+  .table td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .table tr:last-child td {
+    border-bottom: none;
+  }
+  
