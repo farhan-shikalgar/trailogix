@@ -22,22 +22,28 @@ export const authConfig = {
       authorized({ auth, request }) {
         const user = auth?.user;
         const isOnAdminPanel = request.nextUrl?.pathname.startsWith("/admin");
-        const isOnBlogPage = request.nextUrl?.pathname.startsWith("/blog");
+        const isOnBookingPage = request.nextUrl?.pathname.startsWith("/booking");
         const isOnLoginPage = request.nextUrl?.pathname.startsWith("/login");
+        const isOnBookPage = request.nextUrl?.pathname.startsWith("/book");
   
-    //for admins
+    
   
         if (isOnAdminPanel && !user?.isAdmin) {
           return false;
         }
   
-     //for user
+    
   
-        if (isOnBlogPage && !user) {
+        if (isOnBookingPage && !user) {
+          return false;
+        }
+
+
+        if (isOnBookPage && !user) {
           return false;
         }
   
-        // ONLY UNAUTHENTICATED USERS CAN REACH THE LOGIN PAGE
+       
   
         if (isOnLoginPage && user) {
           return Response.redirect(new URL("/", request.nextUrl));
