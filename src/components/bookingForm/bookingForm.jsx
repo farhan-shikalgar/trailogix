@@ -51,7 +51,18 @@ const BookingForm = ({ userId }) => {
         slug: uniqueSlug,
       };
       console.log(bookingData);
-      await addPost(bookingData); // Call function to add booking
+      // await addPost(bookingData); // Call function to add booking server side
+      // console.log(process.env.API_URL)
+      // const API_URL = process.env.NEXT_PUBLIC_API_URL;
+      // console.log(process.env.NEXT_PUBLIC_API_URL)
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/booking`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookingData),
+      });
+
       setIsBookingSubmitted(true); // Update state to indicate booking is submitted
       setFormData({
         // Clear form fields after submission
@@ -169,6 +180,7 @@ const BookingForm = ({ userId }) => {
           </button>
         </Link>
       )}
+      {error && <p>{error}</p>}
     </div>
   );
 };
