@@ -7,7 +7,9 @@ import { Suspense } from "react";
 
 // for api using this
 const getData = async (slug) => {
-  const res = await fetch(`${process.env.API_URL}/api/booking/${slug}`);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/booking/${slug}`
+  );
   if (!res.ok) {
     throw new Error("Something went wrong");
   }
