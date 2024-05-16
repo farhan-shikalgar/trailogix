@@ -1,13 +1,13 @@
+"use client"
 import React from "react";
 import styles from "./booking.module.css";
 import BookCard from "@/components/bookCard/bookCard";
+import { useEffect,useState  } from "react";
 import { getPosts } from "@/lib/data";
 
 //using this by me for api calls
 const getData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/booking`, {
-    next: { revalidate: 3600 },
-  });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/booking`);
 
   if (!res.ok) {
     throw new Error("Something went wrong");
@@ -16,9 +16,33 @@ const getData = async () => {
   return res.json();
 };
 
-const Bookingpage = async () => {
+const Bookingpage =  () => {
+  const [posts, setPosts] = useState([]);
+
   //with api
-  const posts = await getData();
+  // const posts = await getData();
+
+  
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getData();
+        setPosts(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    
+    fetchData();
+
+    
+    const intervalId = setInterval(fetchData, 5000);
+
+    
+    return () => clearInterval(intervalId);
+  }, []);
 
   ////without api for testing local run
   // const posts = await getPosts()
