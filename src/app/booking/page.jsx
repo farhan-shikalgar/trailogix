@@ -1,12 +1,13 @@
-import React from 'react'
-import styles from './booking.module.css'
-import BookCard from '@/components/bookCard/bookCard'
-import { getPosts } from '@/lib/data'
-
+import React from "react";
+import styles from "./booking.module.css";
+import BookCard from "@/components/bookCard/bookCard";
+import { getPosts } from "@/lib/data";
 
 //using this by me for api calls
 const getData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/booking`, {next:{revalidate:3600}});
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/booking`, {
+    next: { revalidate: 3600 },
+  });
 
   if (!res.ok) {
     throw new Error("Something went wrong");
@@ -16,22 +17,21 @@ const getData = async () => {
 };
 
 const Bookingpage = async () => {
-//with api
-const posts = await getData();
+  //with api
+  const posts = await getData();
 
   ////without api for testing local run
   // const posts = await getPosts()
   // console.log(posts)
   return (
     <div className={styles.container}>
-      {posts.map((post) =>(
-      <div className={styles.post} key={post.userId}>
-        <BookCard post={post}/>
-      </div>
+      {posts.map((post) => (
+        <div className={styles.post} key={post.userId}>
+          <BookCard post={post} />
+        </div>
       ))}
-    
-      </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Bookingpage
+export default Bookingpage;

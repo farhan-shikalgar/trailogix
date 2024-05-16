@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 import BookUser from '../bookUser/bookUser';
 
 const getData = async (slug) => {
-  const res = await fetch(`${process.env.API_URL}/api/booking/${slug}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/booking/${slug}`);
   if (!res.ok) {
     throw new Error("Something went wrong");
   }
